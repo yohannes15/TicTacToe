@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>Student Rosters</h1>
+{% if grade_view == 1}
+<ul>
+{% for student in class_roster %}
+<li>
+<b>{{student[0]}}</b> grade is <span style="color:red"> {{student[1]}} </span>
+</li>
+{% endfor %}
+{% endif %}
+
+
+{% if grade_view == 2}
+<ul>
+{% for student in class_roster %}
+<li>
+<b>{{student[0]}}</b> is a <span style="color:red"> {{student[2]}} </span>
+</li>
+{% endfor %}
+{% endif %}
+
+
+{% if grade_view == 0}
+<ul>
+{% for student in class_roster %}
+<li>
+<b>{{student[0]}}</b>, who is a {{student[2]}}, grade is <span style="color:red"> {{student[1]}} </span>
+</li>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
